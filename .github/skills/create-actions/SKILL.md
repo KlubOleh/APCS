@@ -1,7 +1,7 @@
 ---
-mode: agent
-agent: build-engineer
-description: Створює GitHub Actions workflow ci.yml через skill github-actions.
+name: create-actions
+description: "Створює GitHub Actions workflow ci.yml через skill github-actions."
+disable-model-invocation: true
 ---
 # create-actions
 **Передумови:** існують `ci.sh` і `ci.bat`.

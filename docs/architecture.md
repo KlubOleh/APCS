@@ -10,15 +10,17 @@
 | `.github/skills/project-scaffold/SKILL.md` | Skill: каркас проєкту |
 | `.github/skills/build-and-test/SKILL.md` | Skill: Maven + JUnit |
 | `.github/skills/github-actions/SKILL.md` | Skill: CI |
-| `.github/prompts/*.prompt.md` | Commands (`/git-init` … `/init`) |
-| `.github/prompts/init.prompt.md` | Orchestrator |
+| `.github/skills/<name>/SKILL.md` | Commands (`/git-init` … `/bootstrap`) |
+| `.github/skills/bootstrap/SKILL.md` | Orchestrator |
 
 Адаптація під Maven: замість `CMakeLists.txt` — `pom.xml`; тести у стандартному `src/test/java`
 (замість `tests/`); вихідний каталог Maven змінено на `build/` (`<directory>build</directory>`).
 
+Назва `init` конфліктує з вбудованою командою VS Code, тому оркестратор названо `bootstrap`.
+
 ## Взаємодія
 ```
-init ─► git-init ─► create-project ─► create-build ─► create-actions ─► check
+bootstrap ─► git-init ─► create-project ─► create-build ─► create-actions ─► check
               │            │                 │                 │
               ▼            ▼                 ▼                 ▼
          .gitignore   project-scaffold  build-and-test   github-actions

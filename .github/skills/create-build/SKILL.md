@@ -1,7 +1,7 @@
 ---
-mode: agent
-agent: build-engineer
-description: Створює Maven-конфігурацію, юніт-тест BasicAddition і скрипти ci.sh/ci.bat через skill build-and-test.
+name: create-build
+description: "Створює Maven-конфігурацію, юніт-тест BasicAddition і скрипти ci.sh/ci.bat через skill build-and-test."
+disable-model-invocation: true
 ---
 # create-build
 **Передумови:** виконано `create-project`; встановлено JDK 17+ та Maven (`java -version`, `mvn -version`).

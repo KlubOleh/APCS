@@ -1,9 +1,9 @@
 ---
-mode: agent
-agent: build-engineer
-description: Оркестратор — послідовно запускає git-init, create-project, create-build, create-actions, check.
+name: bootstrap
+description: "Оркестратор — послідовно запускає git-init, create-project, create-build, create-actions, check."
+disable-model-invocation: true
 ---
-# init
+# bootstrap
 **Порядок (строго):**
 1. `git-init`
 2. `create-project`

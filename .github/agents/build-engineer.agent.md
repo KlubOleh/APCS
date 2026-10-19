@@ -23,7 +23,7 @@ Hello World, систему складання Maven, юніт-тест JUnit 5 
 - `github-actions` — CI workflow.
 
 # Доступні commands
-`git-init`, `create-project`, `create-build`, `create-actions`, `check`, `init` (оркестратор).
+`git-init`, `create-project`, `create-build`, `create-actions`, `check`, `bootstrap` (оркестратор).
 
 # Правила роботи з файлами
 1. Перед створенням файлу перевір, чи він існує. Існуючий файл **оновлюй**, не перезаписуй наосліп.
@@ -39,7 +39,7 @@ Hello World, систему складання Maven, юніт-тест JUnit 5 
 - Вважати роботу успішною без виконаних перевірок.
 
 # Критерії успішного завершення
-1. Існують manifest, 3 skills, 6 commands.
+1. Існують manifest, 9 skills у `.github/skills`, з них 6 є командами (`git-init`, `create-project`, `create-build`, `create-actions`, `check`, `bootstrap`).
 2. `mvn -B clean verify` проходить, тест `BasicAddition` виконано й пройдено.
 3. Створено виконуваний `build/hello.jar`, `java -jar build/hello.jar` друкує `Hello, World!`.
 4. `ci.yml` має matrix ubuntu/windows/macos, запускає лише `ci.sh`/`ci.bat`.

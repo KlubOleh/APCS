@@ -12,7 +12,7 @@
 ## Запуск агента
 1. Відкрийте репозиторій у VS Code з активним GitHub Copilot.
 2. Copilot Chat → режим **Agent**.
-3. Виконайте `/init` (оркестратор). Окремі кроки: `/git-init`, `/create-project`, `/create-build`, `/create-actions`, `/check`.
+3. Виконайте `/bootstrap` (оркестратор). Окремі кроки: `/git-init`, `/create-project`, `/create-build`, `/create-actions`, `/check`.
 
 ## Запуск проєкту
 ```

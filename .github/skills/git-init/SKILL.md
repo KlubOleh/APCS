@@ -1,7 +1,7 @@
 ---
-mode: agent
-agent: build-engineer
-description: Перевіряє Git-репозиторій, створює/оновлює .gitignore, показує стан Git.
+name: git-init
+description: "Перевіряє Git-репозиторій, створює/оновлює .gitignore, показує стан Git."
+disable-model-invocation: true
 ---
 # git-init
 **Передумови:** встановлено Git; поточний каталог — корінь проєкту.

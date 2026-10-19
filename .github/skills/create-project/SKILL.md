@@ -1,7 +1,7 @@
 ---
-mode: agent
-agent: build-engineer
-description: Створює початковий Java Hello World проєкт через skill project-scaffold.
+name: create-project
+description: "Створює початковий Java Hello World проєкт через skill project-scaffold."
+disable-model-invocation: true
 ---
 # create-project
 **Передумови:** виконано `git-init`.
