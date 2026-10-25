@@ -23,7 +23,9 @@ description: Створює .github/workflows/ci.yml з однією job і matr
 5. `permissions: contents: read`. Секрети не використовуються.
 
 ## Перевірки
-- YAML парситься (`python3 -c "import yaml; yaml.safe_load(open('.github/workflows/ci.yml'))"`).
+- `scripts/check.sh` визначає корінь проєкту через `${BASH_SOURCE[0]}` і працює при запуску або `source` з будь-якого каталогу.
+- Для перевірки YAML вибирається доступний Python у порядку `python3`, `python`, `py -3`; `ci.yml` відкривається з `encoding='utf-8'`.
+- Якщо Python або модуль `yaml` (PyYAML) відсутній, перевірка завершується з ясним повідомленням `[FAIL]`; помилка парсингу YAML також виводиться.
 - Присутні всі три ОС.
 - У кроках `run` немає `mvn`/`javac`.
 - Немає `secrets.` та токенів.

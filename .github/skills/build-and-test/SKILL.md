@@ -17,7 +17,7 @@ description: Створює Maven-конфігурацію (pom.xml), юніт-�
 ## Вихідні дані
 - `pom.xml`: `groupId com.example`, `artifactId hello`, `finalName hello`, `maven.compiler.release 17`, залежність `junit-jupiter` (scope test), плагіни `maven-surefire-plugin` (≥ 3.0, інакше JUnit 5 не запускається) і `maven-jar-plugin` з `mainClass com.example.hello.Main`.
 - `src/test/java/com/example/hello/BasicAdditionTest.java`: тест з `@DisplayName("BasicAddition")`.
-- `ci.sh`, `ci.bat`: `mvn -B -ntp clean verify` → копіювання `target/hello.jar` у `dist/` → `java -jar dist/hello.jar`.
+- `ci.sh`, `ci.bat`: `mvn -B -ntp clean verify` → копіювання `target/hello.jar` у `dist/` → запуск JAR через Java з `JAVA_HOME`, якщо змінну задано, інакше через `java` з `PATH`.
 - `scripts/check.sh`.
 
 ## Кроки
@@ -29,6 +29,7 @@ description: Створює Maven-конфігурацію (pom.xml), юніт-�
 
 ## Перевірки
 - `target/hello.jar` і `dist/hello.jar` існують.
+- Перевірка Java повідомляє версію 17 або новішу; для запуску використовується Java з `JAVA_HOME`, якщо його задано.
 - У виводі Maven: `Running com.example.hello.BasicAdditionTest` та `Tests run: 1, Failures: 0, Errors: 0`.
 - `java -jar dist/hello.jar` виводить `Hello, World!`.
 
@@ -49,3 +50,4 @@ Hello, World!
 | Немає доступу до Maven Central | Повідом причину, не підміняй тест заглушкою. |
 | `Permission denied: ./ci.sh` | `chmod +x ci.sh`. |
 | `no main manifest attribute` | Перевір `mainClass` у `maven-jar-plugin`. |
+| `UnsupportedClassVersionError` | Запущена Java старіша за версію, на яку зібрано класи (Java 17). Задай `JAVA_HOME` на JDK 17+ або виправ `PATH`, щоб `java` вказував на сумісну версію; CI-скрипти використовують Java з `JAVA_HOME`, якщо він заданий. |
