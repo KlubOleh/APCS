@@ -3,7 +3,10 @@ agent: build-engineer
 description: Оркестратор. Послідовно запускає git-init, create-project, create-build, create-actions, check і зупиняється при першій помилці.
 ---
 
-# /init (orchestrator)
+# /init-project (orchestrator)
+
+> Назва `init-project` (а не `init`), бо `/init` у VS Code Copilot є вбудованою командою, яка створює `copilot-instructions.md`.
+> Запуск: `/init-project` у Copilot Chat (режим Agent) або `Ctrl+Shift+P` → `Chat: Run Prompt…` → `init-project`.
 
 ## Передумови
 - Порожній або наявний репозиторій; встановлено Git, JDK 17+, Maven 3.8+, Python 3 (для перевірки YAML).

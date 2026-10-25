@@ -27,15 +27,15 @@ done
 
 echo "== 3. Commands =="
 CNT=0
-for c in git-init create-project create-build create-actions check init; do
+for c in git-init create-project create-build create-actions check init-project; do
   F=.github/prompts/$c.prompt.md
   has_file "$F" && CNT=$((CNT+1))
 done
 [ "$CNT" -ge 6 ] && ok "команд: $CNT" || fail "команд лише $CNT (потрібно 6)"
-# Порядок викликів в init
-ORDER=$(grep -oE '(git-init|create-project|create-build|create-actions|check)\.prompt\.md' .github/prompts/init.prompt.md | sed 's/\.prompt\.md//' | awk '!s[$0]++' | tr '\n' ' ')
+# Порядок викликів в init-project
+ORDER=$(grep -oE '(git-init|create-project|create-build|create-actions|check)\.prompt\.md' .github/prompts/init-project.prompt.md | sed 's/\.prompt\.md//' | awk '!s[$0]++' | tr '\n' ' ')
 [ "$ORDER" = "git-init create-project create-build create-actions check " ] \
-  && ok "init: порядок викликів правильний" || fail "init: неправильний порядок ($ORDER)"
+  && ok "init-project: порядок викликів правильний" || fail "init-project: неправильний порядок ($ORDER)"
 
 echo "== 4. Проєкт =="
 J=src/main/java/com/example/hello

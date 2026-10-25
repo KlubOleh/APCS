@@ -3,7 +3,7 @@
 ## Агент (VS Code + GitHub Copilot)
 1. Відкрити репозиторій у VS Code, увійти в Copilot під підтвердженим студентським акаунтом.
 2. Copilot Chat → режим **Agent**.
-3. Ввести: `/init`
+3. Ввести: `/init-project` (або `Ctrl+Shift+P` → `Chat: Run Prompt…` → `init-project`)
 4. Переглянути створені файли (`git status`, `git diff`), відповідно до `INIT REPORT`.
 
 Окремі команди: `/git-init`, `/create-project`, `/create-build`, `/create-actions`, `/check`.
@@ -27,6 +27,6 @@ bash scripts/check.sh --full
 ## Git-процес
 ```bash
 git checkout -b develop            # лише агент та інструкції
-git checkout -b feature/hello-cpp  # результат запуску /init
+git checkout -b feature/hello-java  # результат запуску /init-project
 # pull request: feature/hello-cpp -> develop, назва lab1/finish
 ```

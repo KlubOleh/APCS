@@ -17,14 +17,14 @@
 | Command `create-build` | `.github/prompts/create-build.prompt.md` |
 | Command `create-actions` | `.github/prompts/create-actions.prompt.md` |
 | Command `check` | `.github/prompts/check.prompt.md` |
-| Orchestrator `init` | `.github/prompts/init.prompt.md` |
+| Orchestrator `init-project` | `.github/prompts/init-project.prompt.md` |
 | CI workflow | `.github/workflows/ci.yml` |
 
 ## 3. Взаємодія компонентів
 ```
           ┌─────────── manifest (правила, заборони, критерії) ───────────┐
           │                                                              │
-/init ──► /git-init ─► /create-project ─► /create-build ─► /create-actions ─► /check
+/init-project ──► /git-init ─► /create-project ─► /create-build ─► /create-actions ─► /check
               │              │                 │                 │              │
               ▼              ▼                 ▼                 ▼              ▼
          .gitignore     project-scaffold   build-and-test   github-actions  scripts/check.sh
@@ -41,7 +41,7 @@
 | check | усе вище | звіт `[OK]/[FAIL]`, код виходу |
 
 ## 5. Обробка помилок оркестратором
-1. Кожен крок має власну перевірку. Невдача означає негайну зупинку (`init` не переходить далі).
+1. Кожен крок має власну перевірку. Невдача означає негайну зупинку (`init-project` не переходить далі).
 2. Повідомлення про помилку містить назву команди та причину.
 3. Підсумковий звіт `INIT REPORT` показує статус кожного кроку (`OK / SKIPPED / FAIL`).
 4. Успіх можливий лише коли `scripts/check.sh --full` повертає код 0.
@@ -54,3 +54,7 @@
 - Залежить від доступу до github.com (завантаження залежностей Maven і плагінів з Maven Central).
 - Не комітить і не публікує зміни самостійно.
 - Якість виконання залежить від моделі Copilot, тому результат завжди перевіряє `check`.
+
+## 8. Примітка про назву оркестратора
+Методичка називає оркестратор `init`. У VS Code `/init` є вбудованою командою Copilot (створює `.github/copilot-instructions.md`), тому
+prompt-файл названо `init-project`. Функція та порядок викликів не змінені.

@@ -13,7 +13,7 @@
 ## Запуск агента
 1. VS Code + розширення GitHub Copilot (обліковий запис зі студентським планом).
 2. Відкрити корінь репозиторію, вибрати **Copilot Chat → Agent mode**.
-3. Виконати в чаті: `/init`
+3. Виконати в чаті: `/init-project` (оркестратор; `/init` зайнята вбудованою командою Copilot)
 
 Окремі команди: `/git-init`, `/create-project`, `/create-build`, `/create-actions`, `/check`.
 

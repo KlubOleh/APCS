@@ -29,7 +29,7 @@ Windows, Linux і macOS, а потім перевірити результат.
 | github-actions | `.github/skills/github-actions/SKILL.md` |
 
 ## Доступні commands
-`git-init`, `create-project`, `create-build`, `create-actions`, `check`, `init` (оркестратор).
+`git-init`, `create-project`, `create-build`, `create-actions`, `check`, `init-project` (оркестратор; назва `init` зайнята вбудованою командою Copilot `/init`).
 Файли: `.github/prompts/*.prompt.md`.
 
 ## Правила роботи з файлами
@@ -61,4 +61,4 @@ Windows, Linux і macOS, а потім перевірити результат.
 4. Тест `BasicAddition` проходить у `mvn verify` (JUnit 5, surefire).
 5. `ci.yml` містить `ubuntu-latest`, `windows-latest`, `macos-latest` і викликає лише `ci.sh` / `ci.bat`.
 6. `target/` та `dist/` присутні в `.gitignore` і не відстежуються Git.
-7. Повторний запуск `init` не змінює вже коректні файли.
+7. Повторний запуск `init-project` не змінює вже коректні файли.
