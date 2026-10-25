@@ -1,0 +1,21 @@
+# Складання та результати запусків
+target/
+build/
+dist/
+out/
+
+# IDE
+.idea/
+.vscode/
+.vs/
+*.iml
+.classpath
+.project
+.settings/
+
+# Логи, кеші, секрети
+*.log
+.cache/
+.env
+*.pem
+*.key
